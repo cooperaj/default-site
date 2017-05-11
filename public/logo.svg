@@ -8,10 +8,15 @@
             <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
         </radialGradient>
     </defs>
-    <circle cx="64" cy="64" r="62"
+    <path id="logo"
+          d="M126,64
+             A62,62 0 1,0 2,64
+             A62,62 0 0,0 64,126
+             L64,64
+             L126,64
+             Z"
         style="fill: url(#grad);
-               stroke-width: 3;
+               stroke-width: 4;
+               stroke-linecap: square;
                stroke: #70A0B7;"/>
-    <rect x="64" y="64" height="64" width="64" style="fill: #ffffff"/>
-    <polyline points="127.5,64 64,64 64,127.5" style="stroke-width: 3; stroke: #70A0B7; fill: none;"/>
 </svg>
