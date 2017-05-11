@@ -5,6 +5,7 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
+  res.status(410);
   res.render('index');
 })
 
