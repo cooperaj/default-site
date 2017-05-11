@@ -1,0 +1,15 @@
+{
+  "name": "dokku.networkpie.co.uk",
+  "version": "1.0.0",
+  "description": "Default site for dokku box",
+  "main": "index.js",
+  "author": "Adam Cooper <adam@networkpie.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-rc.1"
+  }
+}
