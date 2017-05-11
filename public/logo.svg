@@ -15,8 +15,8 @@
              L64,64
              L126,64
              Z"
-        style="fill: url(#grad);
-               stroke-width: 4;
-               stroke-linecap: square;
-               stroke: #70A0B7;"/>
+          style="fill: url(#grad);
+                 stroke-width: 4;
+                 stroke-linecap: square;
+                 stroke: #70A0B7;"/>
 </svg>
