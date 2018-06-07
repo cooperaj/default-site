@@ -12,14 +12,16 @@ html(lang="en")
     link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#5bbad5")
     meta(name="theme-color", content="#ffffff")
 
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css" crossorigin="anonymous")
 
     style.
       @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
-      h1 {
+      #logo-text {
         font-family: "Poiret One";
         margin-top: 5px;
+        font-size: 36px;
+        color: #333;
       }
 
       .vertical-center {
@@ -32,6 +34,6 @@ html(lang="en")
 
   body
     div.vertical-center
-      div.center-block
-        img#logo.center-block(src="logo.svg" alt="networkPie logo" width="96" height="96")
-        h1 networkPie
+      div.centered
+        img#logo.centered(src="logo.svg" alt="networkPie logo" width="96" height="96")
+        h1#logo-text networkPie
