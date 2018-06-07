@@ -1,7 +1,11 @@
 var express = require('express')
 var app = express()
 
-app.use(require('express-naked-redirect')(true))
+app.use(require('express-naked-redirect')({
+  reverse: true,
+  https: true,
+  status: 301
+}))
 app.use(express.static('public'))
 app.set('view engine', 'pug')
 
