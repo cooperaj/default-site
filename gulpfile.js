@@ -10,6 +10,7 @@ gulp.registry(hub);
 gulp.task('default', 
     gulp.parallel(
         'process-assets',
+        'sass',
         gulp.series('generate-favicon', 'inject-favicon-markups')
     )
 );
