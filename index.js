@@ -3,7 +3,6 @@ var app = express()
 
 app.use(require('express-naked-redirect')({
   reverse: true,
-  https: true,
   status: 301
 }))
 app.use(express.static('public'))
