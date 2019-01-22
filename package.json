@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Adam Cooper <adam@networkpie.co.uk>",
   "license": "MIT",
+  "engines": {
+    "node": "8.x"
+  },
   "scripts": {
     "start": "node index.js",
     "postinstall": "node_modules/.bin/gulp"
