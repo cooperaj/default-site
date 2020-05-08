@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var realFavicon = require ('gulp-real-favicon');
-var fs = require('fs');
+const { src, dest } = require('gulp');
+const realFavicon = require ('gulp-real-favicon');
+const fs = require('fs');
 
 // File where the favicon markups are stored
 var FAVICON_DATA_FILE = 'faviconData.json';
@@ -9,7 +9,7 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
-gulp.task('generate-favicon', function(done) {
+function generateFavicon(done) {
   realFavicon.generateFavicon({
     masterPicture: 'assets/images/logo.svg',
     dest: 'public/',
@@ -75,30 +75,34 @@ gulp.task('generate-favicon', function(done) {
 	}, function() {
 		done();
 	});
-});
+}
 
 // Inject the favicon markups in your HTML pages. You should run
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
-gulp.task('inject-favicon-markups', function() {
-  return gulp.src([ 'views/partials/_favicon.pug' ])
+function injectFaviconMarkups() {
+  return src([ 'views/partials/_favicon.pug' ])
     .pipe(
         realFavicon.injectFaviconMarkups(
             JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code
         )
     )
-    .pipe(gulp.dest('views/partials'));
-});
+    .pipe(dest('views/partials'));
+}
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
 // released a new Touch icon along with the latest version of iOS).
 // Run this task from time to time. Ideally, make it part of your
 // continuous integration system.
-gulp.task('check-for-favicon-update', function(done) {
+function checkForFaviconUpdates(done) {
   var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
   realFavicon.checkForUpdates(currentVersion, function(err) {
     if (err) {
       throw err;
     }
   });
-});
+}
+
+exports.generateFavicon = generateFavicon;
+exports.injectFaviconMarkups = injectFaviconMarkups;
+exports.checkForFaviconUpdates = checkForFaviconUpdates;

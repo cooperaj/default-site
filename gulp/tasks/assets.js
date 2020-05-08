@@ -1,7 +1,6 @@
-var gulp = require('gulp');
+const { src, dest } = require('gulp');
 
-gulp.task('process-assets', function() {
-    return gulp.src([ 'assets/images/logo.svg' ])
-        .pipe(gulp.dest('public/'));
-});
-
+exports.processAssets = function processAssets() {
+    return src([ 'assets/images/logo.svg' ])
+        .pipe(dest('public/'));
+}
