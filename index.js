@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
-  res.status(200);
+  res.status(process.env.CODE || 200);
   res.render('index');
 })
 
