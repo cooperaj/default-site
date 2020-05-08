@@ -1,16 +1,16 @@
 'use strict';
 
-var gulp = require('gulp');
-var HubRegistry = require('gulp-hub');
+const { series, parallel } = require('gulp');
+const { processAssets } = require('./gulp/tasks/assets');
+const { compileSass} = require('./gulp/tasks/css');
+const favicon = require('./gulp/tasks/favicon');
 
-var hub = HubRegistry(['gulp/tasks/*.js']);
-
-gulp.registry(hub);
-
-gulp.task('default', 
-    gulp.parallel(
-        'process-assets',
-        'sass',
-        gulp.series('generate-favicon', 'inject-favicon-markups')
+exports.sass = compileSass;
+exports.default = parallel(
+    processAssets, 
+    compileSass, 
+    series(
+        favicon.generateFavicon, 
+        favicon.injectFaviconMarkups
     )
 );

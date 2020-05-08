@@ -1,14 +1,14 @@
 'use strict';
  
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cleancss = require('gulp-clean-css');
-var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+const { src, dest } = require('gulp');
+const sass = require('gulp-sass');
+const cleancss = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
  
-gulp.task('sass', function () {
-    return gulp.src('assets/stylesheets/main.scss')
+exports.compileSass = function compileSass() {
+    return src('assets/stylesheets/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
@@ -17,6 +17,6 @@ gulp.task('sass', function () {
             suffix: '.min'
         }))
         .pipe(sourcemaps.write('css/'))
-        .pipe(gulp.dest('public/')
+        .pipe(dest('public/')
     );
-});
+}
