@@ -1,9 +1,9 @@
 {
-  "name": "networkpie.co.uk",
+  "name": "n8e.dev",
   "version": "1.0.0",
   "description": "networkPie website",
   "main": "index.js",
-  "author": "Adam Cooper <adam@networkpie.co.uk>",
+  "author": "Adam Cooper <adam@acpr.dev>",
   "license": "MIT",
   "engines": {
     "node": "12.x"
