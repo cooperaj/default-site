@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 app.get('/.well-known/webfinger', function (req, res) {
-  res.redirect('https://social.n8e.dev/.well-known/webfinger')
+  res.redirect('https://social.n8e.dev' + req.originalUrl)
 })
 
 app.get('/', function (req, res) {
