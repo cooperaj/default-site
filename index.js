@@ -8,6 +8,10 @@ app.use(require('express-naked-redirect')({
 app.use(express.static('public'))
 app.set('view engine', 'pug')
 
+app.get('/.well-known/webfinger', function (req, res) {
+  res.redirect('https://social.n8e.dev/.well-known/webfinger')
+})
+
 app.get('/', function (req, res) {
   res.status(process.env.CODE || 200);
   res.render('index');
