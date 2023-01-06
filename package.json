@@ -13,9 +13,9 @@
     "postinstall": "node_modules/.bin/gulp"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-naked-redirect": "^0.1.9",
-    "pug": "^2.0.4"
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
