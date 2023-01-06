@@ -12,6 +12,14 @@ app.get('/.well-known/webfinger', function (req, res) {
   res.redirect('https://social.n8e.dev' + req.originalUrl)
 })
 
+app.get('/.well-known/host-meta', function (req, res) {
+  res.redirect('https://social.n8e.dev' + req.originalUrl)
+})
+
+app.get('/.well-known/nodeinfo', function (req, res) {
+  res.redirect('https://social.n8e.dev' + req.originalUrl)
+})
+
 app.get('/', function (req, res) {
   res.status(process.env.CODE || 200);
   res.render('index');
