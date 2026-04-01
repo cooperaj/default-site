@@ -9,14 +9,17 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 app.get('/.well-known/webfinger', function (req, res) {
+  res.appendHeader('Access-Control-Allow-Origin', '*')
   res.redirect(301, 'https://social.n8e.dev' + req.originalUrl)
 })
 
 app.get('/.well-known/host-meta', function (req, res) {
+  res.appendHeader('Access-Control-Allow-Origin', '*')
   res.redirect(301, 'https://social.n8e.dev' + req.originalUrl)
 })
 
 app.get('/.well-known/nodeinfo', function (req, res) {
+  res.appendHeader('Access-Control-Allow-Origin', '*')
   res.redirect(301, 'https://social.n8e.dev' + req.originalUrl)
 })
 
